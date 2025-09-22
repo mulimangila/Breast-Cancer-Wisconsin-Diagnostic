@@ -1,2 +1,1 @@
-from src.data_preprocessing import load_data
-from src.model_training import train_logistic_regression
+
