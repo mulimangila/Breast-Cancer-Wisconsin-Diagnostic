@@ -25,6 +25,7 @@ The **goal** is to apply machine learning models to this data, such as:
 * Decision Trees  
 * Random Forests  
 * XGBoost
+
 I’ll evaluate these models based on several metrics such as accuracy, precision, recall, F1-score, and ROC-AUC to see how well they classify tumors into malignant or benign categories.  
 ---
 
