@@ -25,7 +25,9 @@ The **goal** is to apply machine learning models to this data, such as:
 * Decision Trees  
 * Random Forests  
 * XGBoost
+  
 I'll evaluate these models based on several metrics such as accuracy, precision, recall, F1-score, and ROC-AUC to see how well they classify tumors into malignant or benign categories.
+
 ---
 
 ## **Key Steps and Methods 🚀**
@@ -67,6 +69,7 @@ The dataset was originally contributed by W.N. Street, W.H. Wolberg, and O.L. Ma
 * **UCI Machine Learning Repository**:  [UCI Dataset](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29)
 
 This dataset is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.  
+
 ---
 
 ## **License for This Project 📝**
