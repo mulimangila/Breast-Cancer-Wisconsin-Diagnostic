@@ -83,7 +83,7 @@ If you have ideas to improve the models, or if you spot any areas for improvemen
 
 * Open an Issue to discuss your thoughts.  
 * Fork the repository, make your changes, and create a Pull Request.  
-* Or just send me a friendly message with your thoughts or suggestions\!
+* Or just send me a friendly [message](https://www.linkedin.com/in/emma-m-saisi/) with your thoughts or suggestions\!
 
 I’m always open to hearing about new ways to improve the model, or if you’ve found a new and exciting way to work with the data\!  
 
