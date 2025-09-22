@@ -18,15 +18,14 @@ The aim of this project is to classify breast cancer tumors as either **malignan
 * **Compactness**: A measure of how “tight” or “loose” the nucleus is.  
 * **Concavity and Concave Points**: Characteristics related to the severity and number of inward portions of the tumor contour.
 
-The **goal** is to apply machine learning models to this data, such as:
+The **goal** is to apply machine learning models below to this data
 
 * Logistic Regression  
 * Support Vector Machines (SVM)  
-* Decision Trees  
 * Random Forests  
 * XGBoost
   
-I'll evaluate these models based on several metrics such as accuracy, precision, recall, F1-score, and ROC-AUC to see how well they classify tumors into malignant or benign categories.
+Then evaluate these models based on several metrics such as accuracy, precision, recall, F1-score, and ROC-AUC to see how well they classify tumors into malignant or benign categories.
 
 ---
 
