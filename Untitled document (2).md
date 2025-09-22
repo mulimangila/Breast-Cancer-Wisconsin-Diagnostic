@@ -75,6 +75,7 @@ This dataset is licensed under the **Creative Commons Attribution 4.0 Internatio
 ## **License for This Project 📝**
 
 This repository is licensed under the **MIT License**. Feel free to use, modify, or distribute this code as you like, but please remember to give credit where credit is due\! You can see the full license in the LICENSE file.  
+
 ---
 
 ## **Contributions & Suggestions 💡**
@@ -86,6 +87,7 @@ If you have ideas to improve the models, or if you spot any areas for improvemen
 * Or just send me a friendly message with your thoughts or suggestions\!
 
 I’m always open to hearing about new ways to improve the model, or if you’ve found a new and exciting way to work with the data\!  
+
 ---
 
 **Thanks for checking out this fun project\! 🌟**   
