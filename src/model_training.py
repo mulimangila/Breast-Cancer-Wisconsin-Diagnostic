@@ -1,41 +1,35 @@
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report, roc_auc_score, roc_curve
+import matplotlib.pyplot as plt
 from src.logger import logger
-
-def train_logistic_regression(X_train, y_train):
-    logger.info("Training Logistic Regression model...")
-    model = LogisticRegression(max_iter=500, class_weight="balanced", solver="saga")
-    model.fit(X_train, y_train)
-    logger.info("Logistic Regression model trained.")
-    return model
-
-def train_svm(X_train, y_train):
-    logger.info("Training Support Vector Machine model...")
-    model = SVC(probability=True, class_weight="balanced")
-    model.fit(X_train, y_train)
-    logger.info("Support Vector Machine model trained.")
-    return model
-
-def train_random_forest(X_train, y_train):
-    logger.info("Training Random Forest model...")
-    model = RandomForestClassifier(n_estimators=100, random_state=42, class_weight="balanced")
-    model.fit(X_train, y_train)
-    logger.info("Random Forest model trained.")
-    return model
-
-def train_xgboost(X_train, y_train):
-    logger.info("Training XGBoost model...")
-    model = XGBClassifier(eval_metric="logloss", random_state=42)
-    model.fit(X_train, y_train)
-    logger.info("XGBoost model trained.")
-    return model
 
 def evaluate_model(model, X_test, y_test, model_name):
     logger.info(f"Evaluating {model_name} model...")
+    
+    y_proba = model.predict_proba(X_test)[:, 1]
     y_pred = model.predict(X_test)
+    
     accuracy = accuracy_score(y_test, y_pred)
     logger.info(f"{model_name} Accuracy: {accuracy:.4f}")
-    return accuracy
+
+    report = classification_report(y_test, y_pred, target_names=["Benign", "Malignant"], digits=3)
+    logger.info(f"Classification Report for {model_name}:\n{report}")
+
+    roc_auc = roc_auc_score(y_test, y_proba)
+    logger.info(f"{model_name} ROC-AUC: {roc_auc:.4f}")
+
+    fpr, tpr, _ = roc_curve(y_test, y_proba)
+    plot_roc_curve(fpr, tpr, model_name)
+
+    return accuracy, roc_auc
+
+def plot_roc_curve(fpr, tpr, model_name):
+    plt.figure(figsize=(6, 6))
+    plt.plot(fpr, tpr, label=f'{model_name} (AUC = {roc_auc:.2f})')
+    plt.plot([0, 1], [0, 1], linestyle='--', color='gray')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title(f'ROC Curve - {model_name}')
+    plt.legend(loc="lower right")
+    plt.show()
