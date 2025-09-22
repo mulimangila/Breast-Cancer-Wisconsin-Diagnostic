@@ -4,13 +4,10 @@ from src.model_training import train_logistic_regression, train_svm, train_rando
 from src.evaluation import evaluate_performance
 
 def main():
-    logger.info("Starting the Breast Cancer Classification project...")
+    logger.info("Starting Classification...")
 
     df = load_data("data/breast_cancer.csv")
-
     X, y = preprocess_data(df)
-    
-    # Split the data into train and test
     X_train, X_test, y_train, y_test = split_data(X, y)
 
     logreg_model = train_logistic_regression(X_train, y_train)
@@ -22,8 +19,6 @@ def main():
     evaluate_model(svm_model, X_test, y_test, "Support Vector Machine")
     evaluate_model(rf_model, X_test, y_test, "Random Forest")
     evaluate_model(xgb_model, X_test, y_test, "XGBoost")
-
-    logger.info("Project finished successfully!")
 
 if __name__ == "__main__":
     main()
